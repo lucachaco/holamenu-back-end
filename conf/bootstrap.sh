@@ -6,7 +6,6 @@ echo 'mysql-server-5.5 mysql-server/root_password password toor' | debconf-set-s
 echo 'mysql-server-5.5 mysql-server/root_password_again password toor' | debconf-set-selections
 apt-get -y install mysql-client mysql-server-5.5
 
-
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
