@@ -15,23 +15,55 @@
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
-  'styles/**/*.css'
+  'styles/vendor/bootstrap.css',
+  'styles/vendor/font-awesome.css',
+  'styles/vendor/ace-fonts.css',
 ];
 
 
 // Client-side javascript files to inject in order
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
-  
+
   // Load sails.io before everything else
-  'js/dependencies/sails.io.js',
+  /*
+   'js/dependencies/sails.io.js',
+   */
 
   // Dependencies like jQuery, or Angular are brought in here
-  'js/dependencies/**/*.js',
+  /*'js/dependencies/*//*.js',*/
+
+  'js/theme/elements.scroller.js',
+  'js/theme/elements.colorpicker.js',
+  'js/theme/elements.typeahead.js',
+  'js/theme/elements.wysiwyg.js',
+  'js/theme/elements.spinner.js',
+  'js/theme/elements.treeview.js',
+  'js/theme/elements.wizard.js',
+  'js/theme/elements.aside.js',
+  'js/theme/ace.js',
+  'js/theme/ace.ajax-content.js',
+  'js/theme/ace.touch-drag.js',
+  'js/theme/ace.sidebar.js',
+  'js/theme/ace.sidebar-scroll-1.js',
+  'js/theme/ace.submenu-hover.js',
+  'js/theme/ace.widget-box.js',
+  'js/theme/ace.settings.js',
+  'js/theme/ace.settings-rtl.js',
+  'js/theme/ace.settings-skin.js',
+  'js/theme/ace.widget-on-reload.js',
+  'js/theme/ace.searchbox-autocomplete.js'
+
+
+
+
+
+
+
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
-  'js/**/*.js'
+
 ];
 
 
@@ -49,16 +81,15 @@ var templateFilesToInject = [
 ];
 
 
-
 // Prefix relative paths to source files so they point to the proper locations
 // (i.e. where the other Grunt tasks spit them out, or in some cases, where
 // they reside in the first place)
-module.exports.cssFilesToInject = cssFilesToInject.map(function(path) {
+module.exports.cssFilesToInject = cssFilesToInject.map(function (path) {
   return '.tmp/public/' + path;
 });
-module.exports.jsFilesToInject = jsFilesToInject.map(function(path) {
+module.exports.jsFilesToInject = jsFilesToInject.map(function (path) {
   return '.tmp/public/' + path;
 });
-module.exports.templateFilesToInject = templateFilesToInject.map(function(path) {
+module.exports.templateFilesToInject = templateFilesToInject.map(function (path) {
   return 'assets/' + path;
 });
