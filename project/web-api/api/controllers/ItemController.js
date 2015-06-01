@@ -9,16 +9,16 @@ module.exports = {
 
 
   /**
-   * `ClientController.table()`
+   * `ItemController.table()`
    */
   table: function (req, res) {
 
-    Client.find().exec(function (err, clients) {
+    Item.find().exec(function (err, items) {
       if (err) {
         res.send(400);
       } else {
-        return res.view('client/table', {
-          clients: clients,
+        return res.view('item/table', {
+          items: items,
           myvar: 'hello???',
           title: 'Yeap'
         })
@@ -26,78 +26,23 @@ module.exports = {
     });
   },
 
-
   /**
-   * `ClientController.create()`
-   */
-  create: function (req, res) {
-    Item.create(req.body).exec(function (err, result) {
-      if (err) {
-        return res.json(err);
-      } else {
-        return res.redirect('/items')
-      }
-    });
-  },
-
-
-  /**
-   * `ClientController.edit()`
-   */
-  edit: function (req, res) {
-
-    var defaultClient = {
-      firstName: 'default nombre',
-      lastName: 'default last name'
-
-    }
-
-    Client.findOne({id: req.param('id')}, function (err, client) {
-
-      if (err) {
-        //return res.redirect('/clients')
-        return res.json(err);
-      } else {
-        return res.view('client/edit', {
-          client: client
-        })
-      }
-
-    });
-  },
-
-  /**
-   * `ClientController.new()`
+   * `ItemController.new()`
    */
   new: function (req, res) {
 
 
-    var defaultClient = {
-      firstName: 'default nombre',
-      lastName: 'default last name'
+    var defaultItem = {
+      name: 'default nombre',
+      description: 'default last name'
 
     }
-    return res.view('client/new', {
-      client: defaultClient
+    return res.view('item/new', {
+      item: defaultItem
     })
-  },
-
-
-  /**
-   * `ClientController.update()`
-   */
-  update: function (req, res) {
-    Client.update({id: req.param('id')}, {
-      firstName: req.param('firstName'),
-      lastName: req.param('lastName')
-    }).exec(function (err, result) {
-      if (err) {
-      } else {
-        //req.session.flash['success'].push('Updated successfully');
-        return res.redirect('/clients')
-      }
-    });
   }
+
+
 
 
 

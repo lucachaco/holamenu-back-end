@@ -34,7 +34,10 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
+  'get /items': 'ItemController.table',
+  'get /items/new': 'ItemController.new'
+
 
   /***************************************************************************
   *                                                                          *
