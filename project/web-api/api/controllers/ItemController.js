@@ -42,8 +42,26 @@ module.exports = {
     return res.view('item/new', {
       item: defaultItem
     })
-  }
+  },
 
+
+  /**
+   * `ItemController.create()`
+   */
+  create: function (req, res) {
+
+
+    Item.create(req.body).exec(function (err, result) {
+      if (err) {
+        //return res.redirect('/clients')
+
+        return res.json(err);
+
+      } else {
+        return res.redirect('/items')
+      }
+    });
+  },
 
 
 
