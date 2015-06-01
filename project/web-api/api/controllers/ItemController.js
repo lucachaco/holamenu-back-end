@@ -34,7 +34,9 @@ module.exports = {
 
     var defaultItem = {
       name: 'default nombre',
-      description: 'default last name'
+      description: 'default last name',
+      price: '0',
+      status: 'INACTIVE'
 
     }
     return res.view('item/new', {

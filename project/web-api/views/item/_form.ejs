@@ -12,7 +12,7 @@
   <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Descripción </label>
 
   <div class="col-sm-9">
-    <textarea class="col-xs-10 col-sm-5" id="form-field-8" placeholder="Descripción"></textarea>
+    <textarea class="col-xs-10 col-sm-5"  value="<%= item.description %>" placeholder="Descripción"></textarea>
   </div>
 </div>
 
@@ -30,7 +30,7 @@
   <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Estado </label>
 
   <div class="col-sm-9">
-    <select class=" col-xs-10 col-sm-5">
+    <select class=" col-xs-10 col-sm-5"  value="<%= item.status %>" >
       <option value="ACTIVE">Activo</option>
       <option value="INACTIVE">Inactivo</option>
     </select>
