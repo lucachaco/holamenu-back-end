@@ -2,7 +2,7 @@
   <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nombre </label>
 
   <div class="col-sm-9">
-    <input type="text"  name="firstName" value="<%= item.name %>" placeholder="Name"
+    <input type="text" name="firstName" value="<%= item.name %>" placeholder="Name"
            class="col-xs-10 col-sm-5" autocomplete="off"/>
   </div>
 </div>
@@ -12,7 +12,7 @@
   <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Descripción </label>
 
   <div class="col-sm-9">
-    <textarea class="col-xs-10 col-sm-5"  value="<%= item.description %>" placeholder="Descripción"></textarea>
+    <textarea class="col-xs-10 col-sm-5" placeholder="Descripción"><%= item.description %></textarea>
   </div>
 </div>
 
@@ -20,7 +20,7 @@
   <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Precio </label>
 
   <div class="col-sm-9">
-    <input type="text"  name="lastName" value="<%= item.price %>" placeholder="Precio"
+    <input type="text" name="lastName" value="<%= item.price %>" placeholder="Precio"
            class="col-xs-10 col-sm-5" autocomplete="off"/>
   </div>
 </div>
@@ -30,9 +30,9 @@
   <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Estado </label>
 
   <div class="col-sm-9">
-    <select class=" col-xs-10 col-sm-5"  value="<%= item.status %>" >
-      <option value="ACTIVE">Activo</option>
-      <option value="INACTIVE">Inactivo</option>
+    <select class=" col-xs-10 col-sm-5">
+      <option value="ACTIVE"  <%= item.active ? 'selected="selected"' : '' %> >Activo</option>
+      <option value="INACTIVE" <%= item.active ? 'selected="selected"' : '' %>>Inactivo</option>
     </select>
   </div>
 </div>

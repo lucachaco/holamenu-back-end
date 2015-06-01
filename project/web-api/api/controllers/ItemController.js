@@ -36,7 +36,7 @@ module.exports = {
       name: 'default nombre',
       description: 'default last name',
       price: '0',
-      status: 'INACTIVE'
+      active: true
 
     }
     return res.view('item/new', {
