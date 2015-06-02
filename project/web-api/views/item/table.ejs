@@ -44,7 +44,7 @@
             </td>
 
             <td>
-              <a href="/items/<%= items[i].id %>/edit"><%= items[i].name %></a>
+              <%= items[i].name %>
             </td>
             <td><%= items[i].description %></td>
             <td class="hidden-480"><%=items[i].price%></td>
@@ -60,7 +60,7 @@
                   <i class="ace-icon fa fa-check bigger-120"></i>
                 </button>
 
-                <a href="/clients/3/edit">
+                <a href="/items/<%= items[i].id %>/edit">
                   <button class="btn btn-xs btn-info">
                     <i class="ace-icon fa fa-pencil bigger-120"></i>
                   </button>
@@ -93,7 +93,7 @@
                     </li>
 
                     <li>
-                      <a href="/clients/3/edit" class="tooltip-success" data-rel="tooltip" title="Edit">
+                      <a href="/items/<%= items[i].id %>/edit" class="tooltip-success" data-rel="tooltip" title="Edit">
 																			<span class="green">
 																				<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
 																			</span>
