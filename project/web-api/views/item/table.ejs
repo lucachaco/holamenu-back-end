@@ -47,18 +47,16 @@
               <%= items[i].name %>
             </td>
             <td><%= items[i].description %></td>
-            <td class="hidden-480"><%=items[i].price%></td>
+            <td class="hidden-480"><%= items[i].price %></td>
 
             <td class="hidden-480">
-              <span class="label label-sm label-warning"><%=items[i].active%></span>
+              <span class="label label-sm label-warning"><%= items[i].active %></span>
             </td>
 
             <td>
               <div class="hidden-sm hidden-xs btn-group">
 
-                <button class="btn btn-xs btn-success">
-                  <i class="ace-icon fa fa-check bigger-120"></i>
-                </button>
+
 
                 <a href="/items/<%= items[i].id %>/edit">
                   <button class="btn btn-xs btn-info">
@@ -66,13 +64,19 @@
                   </button>
                 </a>
 
-                <button class="btn btn-xs btn-danger">
-                  <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                </button>
 
-                <button class="btn btn-xs btn-warning">
-                  <i class="ace-icon fa fa-flag bigger-120"></i>
-                </button>
+
+                <form action="/api/destroy/items/<%= items[i].id %>" method="post" style="float: right;">
+                  <button type="submit" class="btn btn-xs btn-danger" onclick="return confirm('Are you sure?')">
+                    <i class="fa fa-times"></i>
+                  </button>
+                </form>
+
+
+
+
+
+
               </div>
 
               <div class="hidden-md hidden-lg">
@@ -84,13 +88,8 @@
 
                   <ul
                     class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                    <li>
-                      <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-																			<span class="blue">
-																				<i class="ace-icon fa fa-search-plus bigger-120"></i>
-																			</span>
-                      </a>
-                    </li>
+
+
 
                     <li>
                       <a href="/items/<%= items[i].id %>/edit" class="tooltip-success" data-rel="tooltip" title="Edit">
@@ -101,11 +100,19 @@
                     </li>
 
                     <li>
-                      <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+
+
+                      <form action="api/destroy/items/<%= items[i].id %>" method="post">
+                        <!--Specification doesnt allow put or delete method in HTML forms-->
+                        <button type="submit" class="tooltip-error" data-rel="tooltip" title="Delete"
+                                onclick="return confirm('Are you sure?')">
 																			<span class="red">
 																				<i class="ace-icon fa fa-trash-o bigger-120"></i>
 																			</span>
-                      </a>
+                        </button>
+                      </form>
+
+
                     </li>
                   </ul>
                 </div>

@@ -10,7 +10,6 @@
     <!-- <form action="/api/items" method="post" class="form-horizontal" role="form">-->
     <form action="/api/items/<%= item.id %>" method="post" class="form-horizontal" role="form">
       <!--Specification doesnt allow put or delete method in HTML forms-->
-      <input type="hidden" name="_method" value="put">
 
       <%- partial('_form.ejs') %>
 

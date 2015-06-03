@@ -66,6 +66,8 @@ module.exports = {
    * `ItemController.create()`
    */
   create: function (req, res) {
+    console.log("creating");
+    req.body.active = req.body.status === 'ACTIVE';
     Item.create(req.body).exec(function (err, result) {
       if (err) {
         return res.json(err);
@@ -91,6 +93,18 @@ module.exports = {
         return res.redirect('/items')
       }
     });
+  },
+
+
+  /**
+   * `ItemController.destroy()`
+   */
+  destroy: function (req, res) {
+    console.log("destroying");
+    Item.destroy({id: req.param('id')})
+      .exec(function (err) {
+        return res.redirect('/items')
+      });
   }
 
 
