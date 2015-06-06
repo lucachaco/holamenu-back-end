@@ -1,9 +1,9 @@
 <div class="page-header">
   <h1>
-    Items
+    Ordenes
 
-    <a href="/items/new" style="float: right;">
-      <button class="btn btn-primary">Nuevo cliente</button>
+    <a href="/categories/new" style="float: right;">
+      <button class="btn btn-primary">Nueva categoria</button>
     </a>
   </h1>
 </div><!-- /.page-header -->
@@ -24,9 +24,6 @@
             </th>
             <th>Nombre</th>
             <th>Description</th>
-            <th class="hidden-480">Price</th>
-
-            <th class="hidden-480">Status</th>
 
             <th></th>
           </tr>
@@ -34,7 +31,7 @@
 
           <tbody>
 
-          <% for(var i = 0; i < items.length; i++) { %>
+          <% for(var i = 0; i < categories.length; i++) { %>
           <tr>
             <td class="center">
               <label class="pos-rel">
@@ -44,21 +41,17 @@
             </td>
 
             <td>
-              <%= items[i].name %>
+              <%= categories[i].name %>
             </td>
-            <td><%= items[i].description %></td>
-            <td class="hidden-480"><%= items[i].price %></td>
+            <td><%= categories[i].description %></td>
 
-            <td class="hidden-480">
-              <span class="label label-sm label-warning"><%= items[i].active %></span>
-            </td>
 
             <td>
               <div class="hidden-sm hidden-xs btn-group">
 
 
 
-                <a href="/items/<%= items[i].id %>/edit">
+                <a href="/items/<%= categories[i].id %>/edit">
                   <button class="btn btn-xs btn-info">
                     <i class="ace-icon fa fa-pencil bigger-120"></i>
                   </button>
@@ -66,7 +59,7 @@
 
 
 
-                <form action="/api/destroy/items/<%= items[i].id %>" method="post" style="float: right;">
+                <form action="/api/destroy/items/<%= categories[i].id %>" method="post" style="float: right;">
                   <button type="submit" class="btn btn-xs btn-danger" onclick="return confirm('Are you sure?')">
                     <i class="fa fa-times"></i>
                   </button>
@@ -92,7 +85,7 @@
 
 
                     <li>
-                      <a href="/items/<%= items[i].id %>/edit" class="tooltip-success" data-rel="tooltip" title="Edit">
+                      <a href="/items/<%= categories[i].id %>/edit" class="tooltip-success" data-rel="tooltip" title="Edit">
 																			<span class="green">
 																				<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
 																			</span>
@@ -102,7 +95,7 @@
                     <li>
 
 
-                      <form action="api/destroy/items/<%= items[i].id %>" method="post">
+                      <form action="api/destroy/items/<%= categories[i].id %>" method="post">
                         <!--Specification doesnt allow put or delete method in HTML forms-->
                         <button type="submit" class="tooltip-error" data-rel="tooltip" title="Delete"
                                 onclick="return confirm('Are you sure?')">
