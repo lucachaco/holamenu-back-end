@@ -39,6 +39,10 @@ module.exports.routes = {
   'get /items/:id/edit': 'ItemController.edit',
   'get /items/new': 'ItemController.new',
 
+  'get /orders': 'OrderController.table',
+
+  'get /categories': 'CategoryController.table',
+
   /**
    * For some reasion the blue print for delete is not working when deleting data from HTML form.
    * This temp route had to be implemented
