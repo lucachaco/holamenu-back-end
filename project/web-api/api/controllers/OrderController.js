@@ -13,10 +13,12 @@ module.exports = {
    */
   table: function (req, res) {
 
-    Order.find().exec(function (err, orders) {
+    Order.find().populate('orderLines').exec(function (err, orders) {
       if (err) {
         res.send(400);
       } else {
+
+        console.log(orders);
         return res.view('order/table', {
           orders: orders,
           title: 'Yeap'
