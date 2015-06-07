@@ -23,8 +23,33 @@ module.exports = {
         })
       }
     });
-  }
+  },
 
+
+  /**
+   * `OrderController.create()`
+   */
+  create: function (req, res) {
+    req.body.active = req.body.status === 'ACTIVE';
+
+    Order.create(req.body).exec(function (err, order) {
+      if (err) {
+        return res.json(err);
+      } else {
+
+        OrderLine.create({'itemName': 'casa', 'order': order.id}).exec(function (err, order) {
+          if (err) {
+            return res.json(err);
+          } else {
+            console.log(order);
+            return res.redirect('/orders')
+          }
+        });
+      }
+    });
+
+
+  }
 
 
 };

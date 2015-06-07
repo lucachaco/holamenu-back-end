@@ -15,6 +15,10 @@ module.exports = {
     status: {
       type: 'string',
       required: true
+    },
+    orderLines:{
+      collection: 'orderLine',
+      via: 'order'
     }
   }
 };
