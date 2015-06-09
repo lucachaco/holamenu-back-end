@@ -19,8 +19,9 @@
                 <span class="lbl"></span>
               </label>
             </th>
+            <th>Items</th>
             <th>Notas</th>
-            <th>Estados</th>
+            <th>Estado</th>
 
             <th></th>
           </tr>
@@ -38,13 +39,16 @@
             </td>
 
             <td>
-              <%= orders[i].name %>
+              <% for(var y = 0; y < orders[i].orderLines.length; y++) { %>
+              <span>
+                [<%= orders[i].orderLines[y].itemName %>]
+              </span>
+              <% } %>
             </td>
-            <td><%= orders[i].description %></td>
-            <td class="hidden-480"><%= orders[i].price %></td>
+            <td><%= orders[i].notes %></td>
 
             <td class="hidden-480">
-              <span class="label label-sm label-warning"><%= orders[i].active %></span>
+              <span class="label label-sm label-warning"><%= orders[i].status %></span>
             </td>
 
             <td>
