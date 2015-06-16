@@ -1,4 +1,6 @@
 {
-	"Welcome": "Welcome",
-	"A brand new app.": "A brand new app."
+	"category": "Category",
+	"categories": "Categories",
+  "new-category": "New category"
+
 }
