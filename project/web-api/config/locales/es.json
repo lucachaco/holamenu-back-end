@@ -1,5 +1,9 @@
 {
+  "name": "Nombre",
+  "description": "Descripción",
+
   "category": "Categoría",
   "categories": "Categorías",
-  "new-category": "Nueva categoría"
+  "new-category": "Nueva categoría",
+  "create-category": "Crear categoría"
 }

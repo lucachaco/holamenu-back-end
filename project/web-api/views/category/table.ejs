@@ -52,7 +52,7 @@
 
 
 
-                <a href="/items/<%= categories[i].id %>/edit">
+                <a href="/categories/<%= categories[i].id %>/edit">
                   <button class="btn btn-xs btn-info">
                     <i class="ace-icon fa fa-pencil bigger-120"></i>
                   </button>
@@ -60,7 +60,7 @@
 
 
 
-                <form action="/api/destroy/items/<%= categories[i].id %>" method="post" style="float: right;">
+                <form action="/api/destroy/categories/<%= categories[i].id %>" method="post" style="float: right;">
                   <button type="submit" class="btn btn-xs btn-danger" onclick="return confirm('Are you sure?')">
                     <i class="fa fa-times"></i>
                   </button>
@@ -86,7 +86,7 @@
 
 
                     <li>
-                      <a href="/items/<%= categories[i].id %>/edit" class="tooltip-success" data-rel="tooltip" title="Edit">
+                      <a href="/categories/<%= categories[i].id %>/edit" class="tooltip-success" data-rel="tooltip" title="Edit">
 																			<span class="green">
 																				<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
 																			</span>
@@ -96,7 +96,7 @@
                     <li>
 
 
-                      <form action="api/destroy/items/<%= categories[i].id %>" method="post">
+                      <form action="api/destroy/categories/<%= categories[i].id %>" method="post">
                         <!--Specification doesnt allow put or delete method in HTML forms-->
                         <button type="submit" class="tooltip-error" data-rel="tooltip" title="Delete"
                                 onclick="return confirm('Are you sure?')">

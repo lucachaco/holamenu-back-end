@@ -33,8 +33,8 @@ module.exports = {
 
 
     var defaultItem = {
-      name: 'default nombre',
-      description: 'default last name',
+      name: '',
+      description: '',
       price: '0',
       active: true
     }
