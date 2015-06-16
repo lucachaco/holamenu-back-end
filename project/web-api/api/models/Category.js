@@ -14,7 +14,7 @@ module.exports = {
     },
     description: {
       type: 'string',
-      required: true
+      required: false
     }
   }
 };

@@ -38,28 +38,65 @@ module.exports = {
       price: '0',
       active: true
     }
-    return res.view('item/new', {
-      item: defaultItem
-    })
+
+
+    Category.find().exec(function (err, categories) {
+      if (err) {
+        res.send(400);
+      } else {
+        return res.view('item/new', {
+          item: defaultItem,
+          categories: categories
+        })
+      }
+    });
+
   },
 
   /**
    * `ItemController.edit()`
    */
   edit: function (req, res) {
+    var q = require('q')
+    promises = [];
+    promises.push(Category.find());
+    promises.push(Item.findOne({id: req.param('id')}));
 
 
-    Item.findOne({id: req.param('id')}, function (err, item) {
-      item.status = item.active ? "ACTIVE" : "INACTIVE";
-      if (err) {
-        return res.json(err);
-      } else {
+    q.all(promises).then(function (results) {
+        console.log(results);
         return res.view('item/edit', {
-          item: item
+          item: results[1],
+          categories: results[0]
         })
+      }, function (error) {
+        console.log("One promise failed.");
       }
+    );
 
-    });
+    /*Category.find().exec(function (err, categories) {
+     if (err) {
+     res.send(400);
+     } else {
+     return res.view('category/table', {
+     categories: categories,
+     })
+     }
+     });*/
+
+
+    /*    Item.findOne({id: req.param('id')}, function (err, item) {
+     item.status = item.active ? "ACTIVE" : "INACTIVE";
+     if (err) {
+     return res.json(err);
+     } else {
+     return res.view('item/edit', {
+     item: item
+     categories: []
+     })
+     }
+
+     });*/
   },
 
   /**

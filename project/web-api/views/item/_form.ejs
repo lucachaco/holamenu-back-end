@@ -16,6 +16,20 @@
   </div>
 </div>
 
+
+<div class="form-group">
+  <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Category </label>
+
+  <div class="col-sm-9">
+    <select class=" col-xs-10 col-sm-5" name="category">
+      <% for(var i = 0; i < categories.length; i++) { %>
+        <option value="ACTIVE"> <%= categories[i].name %></option>
+      <% } %>
+    </select>
+  </div>
+</div>
+
+
 <div class="form-group">
   <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Precio </label>
 
@@ -30,7 +44,7 @@
   <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Estado </label>
 
   <div class="col-sm-9">
-    <select class=" col-xs-10 col-sm-5"  name="status">
+    <select class=" col-xs-10 col-sm-5" name="status">
       <option value="ACTIVE"  <%= item.active ? 'selected=selected' : '' %> >Activo</option>
       <option value="INACTIVE" <%= item.active ? '' : 'selected=selected' %>>Inactivo</option>
     </select>
