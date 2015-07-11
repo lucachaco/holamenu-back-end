@@ -35,6 +35,10 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
+  'get /login': 'UserController.login',
+  'get /sign-up': 'UserController.signUp',
+  'get /reset-password': 'UserController.resetPassword',
+
   'get /items': 'ItemController.table',
   'get /items/:id/edit': 'ItemController.edit',
   'get /items/new': 'ItemController.new',
