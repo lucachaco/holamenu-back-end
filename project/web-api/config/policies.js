@@ -36,7 +36,8 @@ module.exports.policies = {
     'loginCheck': 'flash',
     'signUp': 'flash',
     'logout': 'flash',
-    'resetPassword': 'flash'
+    'resetPassword': 'flash',
+    'register': 'flash'
 
   }
 

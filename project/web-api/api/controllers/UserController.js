@@ -8,6 +8,21 @@
 module.exports = {
 
   /**
+   * `UserController.register()`
+   */
+  register: function (req, res) {
+    req.body.username=req.body.email;
+    req.body.emailVerified=false;
+    User.create(req.body).exec(function (err, result) {
+      if (err) {
+        return res.json(err);
+      } else {
+        return res.redirect('/categories')
+      }
+    });
+  },
+
+  /**
    * `UserController.login()`
    */
   login: function (req, res) {

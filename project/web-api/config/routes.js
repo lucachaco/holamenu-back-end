@@ -39,6 +39,7 @@ module.exports.routes = {
   'get /logout': 'UserController.logout',
   'post /login-check': 'UserController.loginCheck',
   'get /sign-up': 'UserController.signUp',
+  'post /register': 'UserController.register',
   'get /reset-password': 'UserController.resetPassword',
 
   'get /items': 'ItemController.table',
