@@ -33,7 +33,11 @@ module.exports.policies = {
 
   UserController: {
     'login': 'flash',
-    'signUp': 'flash'
+    'loginCheck': 'flash',
+    'signUp': 'flash',
+    'logout': 'flash',
+    'resetPassword': 'flash'
+
   }
 
   /***************************************************************************

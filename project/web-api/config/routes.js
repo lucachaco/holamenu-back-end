@@ -36,6 +36,8 @@ module.exports.routes = {
 
   '/': 'DashboardController.home',
   'get /login': 'UserController.login',
+  'get /logout': 'UserController.logout',
+  'post /login-check': 'UserController.loginCheck',
   'get /sign-up': 'UserController.signUp',
   'get /reset-password': 'UserController.resetPassword',
 
