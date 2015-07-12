@@ -32,9 +32,9 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  },
+
+
+  '/': 'DashboardController.home',
   'get /login': 'UserController.login',
   'get /sign-up': 'UserController.signUp',
   'get /reset-password': 'UserController.resetPassword',
