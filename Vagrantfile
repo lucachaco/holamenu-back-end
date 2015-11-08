@@ -6,7 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty64"
-  config.vm.hostname = 'admin.menucontact.develop'
+  config.vm.hostname = 'admin.holamenu.develop'
   # run "vagrant hostmanager" after "vagrant up", then the hostname will be added to your /etc/hosts
   config.hostmanager.enabled = true
   config.hostmanager.manage_host = true
