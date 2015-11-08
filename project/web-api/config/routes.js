@@ -52,7 +52,11 @@ module.exports.routes = {
   'get /categories': 'CategoryController.table',
   'get /categories/:id/edit': 'CategoryController.edit',
   'get /categories/new': 'CategoryController.new',
-  'post /api/destroy/categories/:id': 'CategoryController.destroy'
+  'post /api/destroy/categories/:id': 'CategoryController.destroy',
+
+  'get /restaurant/information': 'RestaurantController.edit',
+  'get /restaurant/users': 'RestaurantController.users'
+
 
   /**
    * For some reason the blue print for delete is not working when deleting data from HTML form.
