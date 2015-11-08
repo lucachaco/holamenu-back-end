@@ -15,10 +15,9 @@ dpkg-reconfigure locales
 apt-get install -y git
 
 #install node
-#https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server
-add-apt-repository ppa:chris-lea/node.js
-apt-get update
-apt-get -y install nodejs
+curl -sL https://deb.nodesource.com/setup | sudo bash
+apt-get install -y nodejs
+apt-get install -y build-essential
 
 #install sails
 npm -g install sails
